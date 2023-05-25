@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "794966594570",
+    "project_id": "kotlinebicatarider",
+    "storage_bucket": "kotlinebicatarider.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:794966594570:android:bc2174d844ce89493e7bf3",
+        "android_client_info": {
+          "package_name": "com.example.kotlinebicatarider"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "794966594570-ur6phvd34gplmamv43v9uup3nbhq22ts.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAf58iLnnHv37od8VbZAmAcmGUslAPebkU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "794966594570-ur6phvd34gplmamv43v9uup3nbhq22ts.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
