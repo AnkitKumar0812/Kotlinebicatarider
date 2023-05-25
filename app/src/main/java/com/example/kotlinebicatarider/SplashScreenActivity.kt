@@ -38,7 +38,7 @@ class SplashScreenActivity : AppCompatActivity() {
     companion object{
         private val LOGIN_REQUEST_CODE = 7171
     }
-    lateinit var provider: List<AuthUI.IdpConfig>
+    lateinit var providers: List<AuthUI.IdpConfig>
     lateinit var firebaseAuth: FirebaseAuth
     lateinit var listener: AuthStateListener
 
@@ -74,7 +74,7 @@ class SplashScreenActivity : AppCompatActivity() {
         database = FirebaseDatabase.getInstance()
 
         riderInfoRef = database.getReference(commo.RIDER_GET_REFERENCE)
-        provider = Arrays.asList(
+        providers = Arrays.asList(
             AuthUI.IdpConfig.PhoneBuilder().build(),
             AuthUI.IdpConfig.GoogleBuilder().build()
         )
@@ -196,7 +196,7 @@ class SplashScreenActivity : AppCompatActivity() {
                         dialog.dismiss()
 
 
-                        progress_bar.visibility = View.GONE
+
 
                     }
                     .addOnSuccessListener{
@@ -204,7 +204,7 @@ class SplashScreenActivity : AppCompatActivity() {
                         dialog.dismiss()
 
                         gotoHomeActivity(model)
-                        progress_bar.visibility=View.GONE
+                        p.visibility=View.GONE
 
 
 
