@@ -9,6 +9,7 @@ import android.text.TextUtils
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.Button
+import android.widget.ProgressBar
 import android.widget.Toast
 import com.example.kotlinebicatarider.Model.RiderModel
 import com.example.kotlinebicatarider.commo.commo
@@ -39,6 +40,8 @@ class SplashScreenActivity : AppCompatActivity() {
     private lateinit var database: FirebaseDatabase
     private lateinit var riderInfoRef: DatabaseReference
 
+
+
     override fun onStart() {
         super.onStart()
         delaySplashScreen()
@@ -66,6 +69,7 @@ class SplashScreenActivity : AppCompatActivity() {
 
     private fun init(){
         database = FirebaseDatabase.getInstance()
+
 
         riderInfoRef = database.getReference(commo.RIDER_GET_REFERENCE)
         providers = Arrays.asList(
@@ -141,6 +145,7 @@ class SplashScreenActivity : AppCompatActivity() {
     }
 
     private fun showRegisterLayout() {
+        val progress_bar:ProgressBar=findViewById(R.id.progress_bar)
         val builder =AlertDialog.Builder(this,R.style.DialogTheme)
         val itemView = LayoutInflater.from(this).inflate(R.layout.layout_register,null)
 
@@ -188,7 +193,9 @@ class SplashScreenActivity : AppCompatActivity() {
                     .addOnFailureListener{ e ->
                         Toast.makeText(this@SplashScreenActivity,""+e.message,Toast.LENGTH_SHORT).show()
                         dialog.dismiss()
-                        process_bar.visibility=View.GONE
+                        progress_bar.visibility=View.GONE
+
+
 
 
                     }
@@ -197,7 +204,7 @@ class SplashScreenActivity : AppCompatActivity() {
                         dialog.dismiss()
 
                         gotoHomeActivity(model)
-                        process_bar.visibility=View.GONE
+                        progress_bar.visibility=View.GONE
 
 
 
@@ -212,3 +219,4 @@ class SplashScreenActivity : AppCompatActivity() {
 
     }
 }
+
